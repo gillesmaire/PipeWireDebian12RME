@@ -1,3 +1,5 @@
+
+
 # Présentation de Pipewire Debian 12
 
 ## Pipewire
@@ -68,7 +70,7 @@ Le module pipewire-bluetooth permet de gérer les périphériques Bluetooth, com
 - Ce module prend en charge le profil A2DP (audio haute définition), le profil HSP/HFP (pour les conversations téléphoniques) et le profil HID pour des périphériques d'entrée Bluetooth.
 - Il offre une intégration fluide avec le système audio PipeWire, permettant aux périphériques Bluetooth de se connecter et d'être utilisés comme périphériques audio classiques.
 
-## Pipewire-media-session
+## Pipewire-media-session
 
 Pipewire-media-session est responsable de la gestion des flux multimédia dans PipeWire. Il s'agit d'un module qui orchestre les différentes connexions et leur état, ainsi que les politiques de gestion des flux (audio et vidéo).
 
@@ -220,7 +222,7 @@ pactl list sources
 pactl list sources
 ~~~
 
-##  Les commandes PipeWire
+## Les commandes PipeWire
 
 
 Nous allons installer Pipewire uniquement pour un utilisateur.
