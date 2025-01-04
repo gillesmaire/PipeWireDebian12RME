@@ -1,6 +1,6 @@
 
 
-# Présentation de Pipewire Debian 12
+# Présentation de Pipewire Debian 12
 
 ## Pipewire
 
