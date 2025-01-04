@@ -3,24 +3,23 @@
 ## Pipewire
 
 PipeWire est un serveur multimédia moderne pour Linux, qui vise à remplacer
-    - PulseAudio (serveur audio)
-    - JACK (serveur audio à faible latence), tout en offrant une gestion unifiée du son, de la vidéo et des périphériques multimédia.
+- PulseAudio (serveur audio)
+- JACK (serveur audio à faible latence), tout en offrant une gestion unifiée du son, de la vidéo et des périphériques multimédia.
 
-Pipewire permet de gérer l'audio mais aussi la vidéo. Ainsi grâce à Pipewire ont peut gérer
+Pipewire perend en charge la gestion de l'audio mais aussi de la vidéo. Ainsi grâce à Pipewire ont peut gérer
 plusieurs vidéos et écouter à la fois plusieurs sources audio.
 
-PipeWire permet de génrer des périphériques multimédia tels que des microphones, des caméras des hauts parleurs, des tables de mixage
+PipeWire permet de générer des périphériques multimédia tels que des microphones, des caméras, des hauts parleurs, des tables de mixage.
 
 ## Avantages
 
 Les applications qui utilisent PulseAudio ou Jack peuvent fonctionner avec PipeWire sans modification.
 
-PipeWire garde la gestion des faibles latences qu'offrai Jack.
+PipeWire garde la gestion des faibles latences qu'offrait Jack.
 
 Il supporte Wayland au niveau de la gestion de la vidéo
 
-Gère la sécurité et le sandboxing c'est à dire que chaque ressource ne peut accédéer qu'à certains
-périphériques et pas à d'autres.
+Il gère la sécurité et le sandboxing c'est à dire que chaque ressource ne peut accédéer qu'à certains périphériques et pas à d'autres.
 
 ## Les différents modules de PipeWire
 
@@ -29,11 +28,11 @@ périphériques et pas à d'autres.
 Le Core gère l'interconnexion de tous les autres modules. Il est responsable de la gestion du
 flux multimédia et de la communication entre les périphériques.
 
-Ainsi il gère les connexion entre les applications clients et les périphériques (micros, HP, webcams)
+Ainsi il prends en compte les connexions entre les applications clients et les périphériques (micros, HP, webcams)
 
 Il gère la sychronisation des flux audio et vidéo et leur communication
 
-Il gère la lantence, l'optimisation des ressources et l'accès sécurisé aux périphériques.
+Il gère la latence, l'optimisation des ressources et l'accès sécurisé aux périphériques.
 
 ### PiperWire Pulse
 
@@ -43,22 +42,23 @@ Pipewire-pulse émule PulseAudio, permettant à PipeWire de se comporter exactem
 
 Ce module permet de gérer les flux audio (entrées et sorties), de configurer les périphériques audio, d’appliquer des effets sonores, etc.
 
-PipeWire pulse se fera passer pour serveur Pulse Audio pour les applications qui utilisent Pulse Audio
+PipeWire pulse se fera passer pour serveur Pulse Audio pour les applications qui utilisent Pulse Audio. C'est ainsi qu'on pourra écouter Youtube en Pulse audio sur une carte RME qui ne supporte
+que le protocole Jack.
 
 ### Pipewire Jack
 
 Le module pipewire-jack permet à PipeWire de remplacer JACK, qui est utilisé pour les applications nécessitant de la haute performance audio, notamment en production musicale, en temps réel et en audio à faible latence.
 
-- peWire peut fonctionner avec JACK en émulation, permettant aux applications conçues pour JACK de fonctionner sans modification avec PipeWire
-- Le module pipewire-jack permet la gestion d'audio en temps réel avec une latence faible, ce qui est essentiel pour des applications professionnelles comme des DAW (Digital Audio Workstations) ou des logiciels de production musical
+- PipeeWire peut fonctionner avec JACK en émulation, permettant aux applications conçues pour JACK de fonctionner sans modification avec PipeWire
+- Le module pipewire-jack permet la gestion d'audio en temps réel avec une latence faible, ce qui est essentiel pour des applications professionnelles comme des DAW (Digital Audio Workstations) ou des logiciels de production musicale.
 
 ### PiperWire Video
 
 Le module pipewire-media-session permet de gérer la vidéo dans PipeWire. Il s'occupe de la gestion des périphériques vidéo comme les webcams ou les cartes de capture.
 
 - Ce module est souvent utilisé avec Wayland, car PipeWire gère les flux vidéo, permettant de capturer des vidéos et de diffuser des écrans via des applications utilisant Wayland.
-- Par exemple, il permet la gestion des flux vidéo dans des applications comme les appels vidéo ou les logiciels de capture d'écran.
-- Le module peut également interagir avec des technologies comme V4L2 (Video4Linux2), ce qui permet d'utiliser des webcams et des caméras USB avec PipeWire.
+- Par exemple, il permet la gestion des flux vidéo dans des applications vidéo ou les logiciels de capture d'écran.
+- Le module peut également interagir avec des technologies comme V4L2 (Video4Linux2), ce qui permet d'utiliser des webcams et des caméras USB avec PipeWire et ce de façon simultannée.
 
 
 ### PiperWire Bluetooth
@@ -77,7 +77,7 @@ Pipewire-media-session est responsable de la gestion des flux multimédia dans P
 
 ## Pipewire-udev
 
-pipewire-udev est un module qui permet à PipeWire de détecter dynamiquement les périphériques audio et vidéo en se basant sur udev, le gestionnaire de périphériques sous Linux.
+Pipewire-udev est un module qui permet à PipeWire de détecter dynamiquement les périphériques audio et vidéo en se basant sur udev, le gestionnaire de périphériques sous Linux.
 
 - Il gère l'ajout et la suppression des périphériques (comme les microphones ou les haut-parleurs) en temps réel.
 
@@ -98,7 +98,7 @@ Elle permet aux développeurs de concevoir des applications qui fonctionnent de 
 ## Introduction
 
 Pipewire peut être installé pour tous les utilisateurs d'une machine ou juste pour certains
-utilisateurs ou plutôt les logiciels sont installés sur une machine mais utilisables que
+utilisateurs ou plutôt, les logiciels sont installés sur une machine mais utilisables que
 par certains utilisateurs.
 
 C'est une solution pratique pour faire des tests et ne pas risquer de créer des dommages
@@ -151,7 +151,7 @@ which pipewire
 sudo apt install pipewire pipewire-pulse pipewire-alsa pipewire-jack
 ~~~
 
-Afin que pipewire ne soit pas activé pour tous les utilisateurs, on peut empêcher sont activation par
+Afin que pipewire ne soit pas activé pour tous les utilisateurs, on peut empêcher son activation par
 
 ~~~
 sudo systemctl mask pipewire.service
@@ -184,6 +184,10 @@ Et on vérifiera que les services sont activés par :
 systemctl --user status pipewire.service
 systemctl --user status pipewire-pulse.service
 ~~~
+
+
+Notons que nous aurions pu omettre l'option --user, dans ce cas les manipulations auraient
+été activées pour tous les utilisateurs.
 
 
 # Quelques premières commandes
@@ -224,12 +228,13 @@ Afin de ne pas pertuber votre environnement créer un utilisateur en root
 via la commande
 
 ~~~
-sudo add user toto
+sudo add user test
 ~~~
 
 Connectez vous avec ce nom.
 
-Nous allons maintenant créer des fichiers de sevices manuellement dans le répertoire de toto
+Nous allons maintenant créer des fichiers de sevices manuellement dans le répertoire de cet
+utilisateur test
 
 
 ~~~
@@ -275,16 +280,10 @@ WantedBy=default.target
 Ensuite on démarre les services PipeWire par :
 
 ~~~
-[Unit]
-Description=PipeWire Multimedia Service
-Documentation=man:pipewire(1)
-
-[Service]
-ExecStart=/usr/bin/pipewire
-Restart=on-failure
-
-[Install]
-WantedBy=default.target
+sudo systemctl start pipewire.service
+sudo systemctl start pipewire-pulse.service
+sudo systemctl enable pipewire.service
+sudo systemctl enable pipewire-pulse.service
 ~~~
 
 
