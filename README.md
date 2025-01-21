@@ -494,7 +494,7 @@ les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement Alsa
 - On se rappelle du nom peu orthodoxe qpwjack  en se disant qu'il a été développé
 en Qt et qu'il concerne PipeWire et qu'il affiche le graphe suivant :
 
-![qpwgraph](qpwgrpah.png)
+![qpwgraph](qpwgraph.png)
 
 - Dans cet exemple, on voit qu'on peut mixer la sortie de firefox qui nous permet
 de voir et d'écouter un match de foot tout en écoutant une nocturne de Chopin via
