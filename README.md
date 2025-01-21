@@ -464,6 +464,32 @@ systemctl --user status pipewire.service
 systemctl --user status pipewire-pulse.service
 ~~~
 
+# Utilisation
+
+## Ce qu'on ne lance plus
+
+- On ne lance plus qjackctl
+
+
+## Ce qu'on lance toujours
+
+- Si on utilisse une carte RME on doit toujours utiliser hdspmixer
+- On utilise Firefox comme avant car il pensera jouer du son pour une carte ALSA
+- On ulise clémentine comme avant mais dans les préférences on lui demande de
+router le son vers Jack si sa carte RME ne supporte que Jack
+
+
+## Ce qu'on doit maintenant utiliser
+
+- On doit utiliser pavucontrol
+
+~~~
+[{Pavucontrol](pavucontrol.png)
+
+
+
+
+
 
 
 
