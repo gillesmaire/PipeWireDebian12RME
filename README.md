@@ -468,7 +468,7 @@ systemctl --user status pipewire-pulse.service
 
 ## Ce qu'on ne lance plus
 
-- On ne lance plus qjackctl
+- On ne lance plus qjackctl car on va router les flux via qpwgraph
 
 
 ## Ce qu'on lance toujours
@@ -481,9 +481,29 @@ router le son vers Jack si sa carte RME ne supporte que Jack
 
 ## Ce qu'on doit maintenant utiliser
 
-- On doit utiliser pavucontrol
+
+- On doit utiliser pavucontrol dans l'onglet configuration et au niveau de
+chaque carte visible activer Pro audio ce qui aura pour effet de laisser
+PipeWire gérer le son pour ces cartes
 
 ![Pavucontrol](pavucontrol.png)
+
+
+- Ensuite on peut lancer qpwgraph qui est le qjackctl qui prend en compte tous
+les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement Alsa
+- On se rappelle du nom peu orthodoxe qpwjack  en se disant qu'il a été développé
+en Qt et qu'il concerne PipeWire et qu'il affiche le graphe suivant :
+
+![qpwgraph](qpwgrpah.png)
+
+- Dans cet exemple, on voit qu'on peut mixer la sortie de firefox qui nous permet
+de voir et d'écouter un match de foot tout en écoutant une nocturne de Chopin via
+Clémentine. On peut mixer les sources sonores via pacucontrol.
+
+
+
+
+
 
 
 
