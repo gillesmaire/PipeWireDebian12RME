@@ -26,10 +26,10 @@ PipeWire garde la gestion des faibles latences qu'offrait Jack.
 Il supporte Wayland au niveau de la gestion de la vidéo
 
 Il gère la sécurité et le sandboxing c'est à dire que chaque ressource ne peut
-accédéer qu'à certains périphériques et pas à d'autres.
+accédér qu'à certains périphériques et pas à d'autres.
 
 Ces caractéristiques font qu'un vieux logiciel qui utilisait ALSA peut être
-utilisé dans Pipewire et mixé avec une carte son Jack de façon tout à fait simle.
+utilisé dans Pipewire et mixé avec une carte son Jack de façon tout à fait simple.
 
 
 
@@ -72,8 +72,8 @@ pour les applications nécessitant de la haute performance audio, notamment
 en production musicale, en temps réel et en audio à faible latence.
 
 - PipeWire peut fonctionner avec JACK en émulation, permettant aux applications
-conçues pour JACK de fonctionner sans modification avec PipeWire
-- Le module pipewire-jack permet la gestion d'audio en temps réel avec une
+conçues pour JACK de fonctionner sans modification avec PipeWire.
+- Le module pipewire-jack permet la gestion de l'audio en temps réel avec une
 latence faible, ce qui est essentiel pour des applications professionnelles
 comme des DAW (Digital Audio Workstations) ou des logiciels de production
 musicale.
@@ -357,7 +357,7 @@ Activer le serveur Jack avec Pipewire
 
 ## Cas particulier la carte RME
 
-La carte RME ne fonctionne pas en mode  PulseAudio on va devoir installer pulseaudio-module-jack
+La carte RME ne fonctionne pas en mode PulseAudio on va devoir installer pulseaudio-module-jack
 
 ~~~
 sudo apt install pulseaudio-module-jack
@@ -473,9 +473,9 @@ systemctl --user status pipewire-pulse.service
 
 ## Ce qu'on lance toujours
 
-- Si on utilisse une carte RME on doit toujours utiliser hdspmixer
+- Si on utilise une carte RME on doit toujours utiliser hdspmixer
 - On utilise Firefox comme avant car il pensera jouer du son pour une carte ALSA
-- On ulise clémentine comme avant mais dans les préférences on lui demande de
+- On utilise Clementine comme avant mais dans les préférences on lui demande de
 router le son vers Jack si sa carte RME ne supporte que Jack
 
 
@@ -493,14 +493,14 @@ PipeWire gérer le son pour ces cartes
 compte tous les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement
 Alsa
 - On se rappelle du nom peu orthodoxe qpwjack  en se disant qu'il a été développé
-en Qt et qu'il concerne PipeWire et qu'il affiche le graphe suivant :
+en **Q**t et qu'il concerne **P**ipe**W**ire et qu'il affiche le **graph**e suivant :
 
 ![qpwgraph](qpwgraph.png)
 
-- Dans cet exemple, on voit qu'on peut mixer la sortie de firefox qui nous permet
-par exemple de voir et d'écouter un match de foot tout en écoutant via Firefox
-en écoutant une nocturne de Chopin viaClémentine.
-On peut mixer les sources sonores via pacucontrol.
+- Dans cet exemple, on voit qu'on peut mixer la sortie de Firefox qui nous permet
+par exemple de voir et d'écouter un match de foot via Firefox
+en écoutant une nocturne de Chopin via Clementine.
+- On peut mixer les sources sonores via pacucontrol.
 
 
 
