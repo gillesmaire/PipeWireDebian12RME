@@ -489,16 +489,18 @@ PipeWire gérer le son pour ces cartes
 ![Pavucontrol](pavucontrol.png)
 
 
-- Ensuite on peut lancer qpwgraph qui est le qjackctl qui prend en compte tous
-les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement Alsa
+- Ensuite on peut lancer qpwgraph qui est le qjackctl de pipewire et qui prend en
+compte tous les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement
+Alsa
 - On se rappelle du nom peu orthodoxe qpwjack  en se disant qu'il a été développé
 en Qt et qu'il concerne PipeWire et qu'il affiche le graphe suivant :
 
 ![qpwgraph](qpwgraph.png)
 
 - Dans cet exemple, on voit qu'on peut mixer la sortie de firefox qui nous permet
-de voir et d'écouter un match de foot tout en écoutant une nocturne de Chopin via
-Clémentine. On peut mixer les sources sonores via pacucontrol.
+par exemple de voir et d'écouter un match de foot tout en écoutant via Firefox
+en écoutant une nocturne de Chopin viaClémentine.
+On peut mixer les sources sonores via pacucontrol.
 
 
 
