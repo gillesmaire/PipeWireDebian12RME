@@ -483,7 +483,6 @@ router le son vers Jack si sa carte RME ne supporte que Jack
 
 - On doit utiliser pavucontrol
 
-~~~
 [Pavucontrol](pavucontrol.png)
 
 
