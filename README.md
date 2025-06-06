@@ -354,22 +354,24 @@ sudo apt install pipewire-jack
 
 Activer le serveur Jack avec Pipewire
 
+pour 
 
 ## Cas particulier la carte RME
 
 La carte RME ne fonctionne pas en mode PulseAudio on va devoir installer pulseaudio-module-jack
 
 ~~~
-sudo apt install pulseaudio-module-jack
-~~~
-
-Et charger les modules PulseAudio
+sudo apt install jackd2
 
 ~~~
-pactl load-module module-jack-source
-pactl load-module module-jack-sink
-~~~
 
+
+
+~~~
+pw-jack qjackctl
+pw-jack ardour
+
+~~~
 
 # Cas général PipeWire pour chaque les utilisateurs
 
@@ -503,9 +505,36 @@ en écoutant une nocturne de Chopin via Clementine.
 - On peut mixer les sources sonores via pacucontrol.
 
 
+# Résoudre les problèmes sous PipeWire
+
+
+## Tester l'installation
+
+La commande suivante permet de tester l'état du service
+~~~
+systemctl  --user status pipewire.service
+~~~
+
+## Différents cas d'école
+
+### libpipewire-module-jack
+
+~~~
+pw.conf: 0x561ca97ea0e0: could not load mandatory module "libpipewire-module-jack"
+~~~
 
 
 
+
+
+# Liste des logiciels et leur utilisation avec PipeWire qpwgraph
+
+- **Firefox :** une fois lancé on trouve l'objet Firefox les ports Firefox:output_FL et Firefox:output_FR pour gauche et droite
+- **Clementine :** une fois lancé on trouve
+    - Si on a lancé Clementine en mode ALSA, l'objet PIPEWIRE ALSA[clementine] et ses ports ALSA Playback::output_FL et  ALSA Playback::output_FR
+    - Si on a lancé Clementine en mode Jack, l'objet PIPEWIRE JACK[clementine] et ses ports JACK Playback::output_FL et  JACK Playback::output_FR
+- **Audacity :** une fois lancé dans le carré Audio Setup demander dans Playback  le port pipewire il apparaitra dans qpwgraph
+- **Web Cam Logitech PRO :** HD Pro Webcam C920:capture_FL et C920:capture_FR
 
 
 
