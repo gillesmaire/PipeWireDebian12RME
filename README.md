@@ -466,6 +466,17 @@ systemctl --user status pipewire.service
 systemctl --user status pipewire-pulse.service
 ~~~
 
+On veillera à ce que la commancde `ulimit -l` renvoi unlimited
+
+Cela se fait en ajoutant dans le fichier `etc/security/limits.conf` la ligne 
+
+~~~
+gilles		- 	memlock		unlimited
+~~~
+
+Attention de rebooter pour que la commande soit interprétée par le noyau.
+
+
 # Utilisation
 
 ## Ce qu'on ne lance plus
@@ -495,7 +506,7 @@ PipeWire gérer le son pour ces cartes
 compte tous les équipements sonores, qu'ils soient Jack, PulseAudio ou simplement
 Alsa
 - On se rappelle du nom peu orthodoxe qpwjack  en se disant qu'il a été développé
-en **Q**t et qu'il concerne **P**ipe**W**ire et qu'il affiche le **graph**e suivant :
+en **Qt** et qu'il concerne **P**ipe**W**ire et qu'il affiche le **graph**e suivant :
 
 ![qpwgraph](qpwgraph.png)
 
